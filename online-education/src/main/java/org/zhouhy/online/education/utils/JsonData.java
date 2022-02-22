@@ -1,6 +1,8 @@
 package org.zhouhy.online.education.utils;
 
-
+/**
+ * 小滴课堂 接口返回工具类
+ */
 public class JsonData {
 
 

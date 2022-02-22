@@ -1,25 +1,42 @@
 package org.zhouhy.online.education.mapper;
 
+
 import org.springframework.stereotype.Repository;
 import org.zhouhy.online.education.domains.Video;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class VideoMapper {
-    private static final Map<Long, Video> videoMap = new HashMap<>();
+
+    private static Map<Integer, Video> videoMap = new HashMap<>();
+
     static {
-        videoMap.put(1L,new Video(1L,"Java 基础"));
-        videoMap.put(2L,new Video(2L,"Spring 基础"));
-        videoMap.put(3L,new Video(3L,"Hibernate 基础"));
-        videoMap.put(4L,new Video(4L,"Spring Boot 基础"));
-        videoMap.put(5L,new Video(5L,"Spring Cloud 基础"));
+
+        videoMap.put(1,new Video(1,"Java基础课程，jdk8~13新特性"));
+        videoMap.put(2,new Video(2,"SpringBoot2.X零基础到实战"));
+        videoMap.put(3,new Video(3,"微服务SpringCLoud全家桶"));
+        videoMap.put(4,new Video(4,"SpringBoot实战微信支付课程"));
+        videoMap.put(5,new Video(5,"小滴课堂面试专题第一季，300道大厂连环问"));
+
     }
-    
-    public List<Video> listVideos(){
-        return new ArrayList<>(videoMap.values());
+
+
+
+    public List<Video> listVideo(){
+
+        List<Video> list = new ArrayList<>();
+        list.addAll(videoMap.values());
+
+        return  list;
     }
+
+
+
+
+
+
+
+
+
 }
